@@ -26,7 +26,7 @@
         inherit pkgs;
         modules = [
 	./home.nix 
-	./host/anewaqq
+	./home/anewaqq/default.nix
 	chaotic.nixosModules.default
 	];
       };
