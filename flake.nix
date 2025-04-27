@@ -4,7 +4,10 @@
   inputs = {
 	# Repository's
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 	# Addition stuff
     nixgl.url = "github:nix-community/nixGL";
 	# Home manager
@@ -14,7 +17,7 @@
     };
   };
   
-  outputs = { nixgl, chaotic, nixpkgs, home-manager, ... }:
+  outputs = { nixgl, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -25,20 +28,18 @@
       homeConfigurations.anewaqq = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-	./home.nix 
-	./home/anewaqq/default.nix
-	chaotic.nixosModules.default
+	./home
+	./home/anewaqq
 	];
       };
       
       nixosConfigurations.anewaqq = nixpkgs.lib.nixosSystem {
 	inherit system;
 	modules = [
-	  chaotic.nixosModules.default
 	  home-manager.nixosModules.home-manager {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.youruser = import ./home.nix;
+	    home-manager.users.q = import ./home.nix;
 	  }
 	];
       };
@@ -47,11 +48,10 @@
         inherit system;
         modules = [
           ./host/eweless3/configuration.nix
-	  chaotic.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.youruser = import ./home.nix;
+            home-manager.users.q = import ./home.nix;
           }
         ];
       };

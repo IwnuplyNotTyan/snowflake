@@ -12,7 +12,6 @@
     # Programming languages
     go
     lua
-    typesript
     eslint
 
     # Package manager's

@@ -1,6 +1,6 @@
 {
   import = [
   	./git.nix
-#	./neovim.nix
+	./neovim.nix
   ];
 }

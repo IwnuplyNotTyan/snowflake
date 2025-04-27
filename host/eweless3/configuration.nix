@@ -151,7 +151,9 @@
   services.openssh.enable = true;
   
   # PKGS
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = {
+  	shells = with pkgs; [ zsh ];
+	systemPackages 	= with pkgs; [
   
   # Nix
   nvd
@@ -222,12 +224,11 @@
   qjackctl
   jack_capture
   ];
+  };
 
   # I3 Gaps
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
   services.xserver.windowManager.i3.enable = true;
-  # Default Shell
-  environment.shells = with pkgs; [ zsh ];
 
   # Doas Enable & Config
   security = {
