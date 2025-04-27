@@ -28,7 +28,6 @@
       homeConfigurations.anewaqq = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-	./home
 	./home/anewaqq
 	];
       };
