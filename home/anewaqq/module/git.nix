@@ -48,12 +48,6 @@ programs.git = {
     credential."https://gist.github.com" = {
       helper = "/Users/q/.nix-profile/bin/gh auth git-credential";
     };
-    credential."http://lira.iwnuply.store:3000" = {
-      helper = "store";
-    };
-    credential."https://lira.welara-sun.ts.net" = {
-      helper = "store";
-    };
   };
 };
 
