@@ -87,7 +87,7 @@
           modules = [
             ./home/anewaqq/home.nix
             ./pkgs/miri/option.nix
-            nix-index-database.hmModules.nix-index
+            nix-index-database.homeModules.nix-index
             agenix.homeManagerModules.age
 	    koi.homeManagerModules.default
 	    #nix-doom-emacs-unstraightened.homeModule
