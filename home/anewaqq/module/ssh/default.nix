@@ -20,9 +20,17 @@ in
   programs.ssh = {
     enable = true;
 
-    enableDefaultConfig = true;
-    
+    enableDefaultConfig = false;
+
     matchBlocks = {
+      "*" = {
+        addKeysToAgent = "yes";
+        identityFile = [
+          "~/.ssh/id_ed25519"
+          "~/.ssh/id_rsa"
+        ];
+      };
+
       "github.com" = {
         hostname = "github.com";
         user = "git";
@@ -31,10 +39,10 @@ in
 
       "Soft" = {
         hostname = "git.welara-sun.ts.net";
-	port = 23231;
-	identityFile = "~/.ssh/id_ed25519";
+        port = 23231;
+        identityFile = "~/.ssh/id_ed25519";
       };
-      
+
       "Mikrotik" = {
         hostname = "192.168.1.1";
         user = "root";
@@ -46,12 +54,6 @@ in
         };
       };
     };
-
-    extraConfig = ''
-      AddKeysToAgent yes
-      IdentityFile ~/.ssh/id_ed25519
-      IdentityFile ~/.ssh/id_rsa
-    '';
   };
   
   #home.activation = {
