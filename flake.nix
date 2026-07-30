@@ -81,6 +81,7 @@
 	    python3PackagesUnstable = pkgsUnstable.python3Packages;
 	  };
 	  warpdPkg = pkgs.callPackage ./pkgs/warpd { };
+	  warpdLinuxPkg = pkgs.callPackage ./pkgs/warpd-linux { };
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -105,6 +106,7 @@
 	      koi
 	      mousewalkPkg
 	      warpdPkg
+	      warpdLinuxPkg
               ;
           };
         };

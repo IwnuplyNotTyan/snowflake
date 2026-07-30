@@ -25,7 +25,6 @@ in
     xorg.setxkbmap
 
     feh
-    warpd
 
     nerd-fonts.iosevka
 

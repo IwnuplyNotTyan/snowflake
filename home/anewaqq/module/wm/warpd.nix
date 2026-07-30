@@ -1,0 +1,5 @@
+{ warpdLinuxPkg, ... }:
+
+{
+  home.packages = [ warpdLinuxPkg ];
+}

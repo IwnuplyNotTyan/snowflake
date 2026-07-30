@@ -12,6 +12,7 @@
   ./picom.nix	# Picom
   #./qs/qs.nix  # Widgets
   ./eww/eww.nix
+  ./warpd.nix   # Warpd
   ]
   ++ lib.optionals (isDarwin) [
   #./neru.nix	# Neru
