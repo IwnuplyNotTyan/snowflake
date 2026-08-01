@@ -1,4 +1,4 @@
-{ pkgs, lib, warpdPkg, isDarwin ? false, ... }:
+{ pkgs, lib, warpdMacosPkg, isDarwin ? false, ... }:
 
 let
   keyboardSwitcher = pkgs.runCommand "keyboardSwitcher" {} ''
@@ -11,7 +11,7 @@ in
   services.skhd = lib.mkIf isDarwin {
     enable = true;
     config = ''
-      cmd + alt - x : ${keyboardSwitcher}/bin/keyboardSwitcher select "U.S." 2>/dev/null; ${warpdPkg}/bin/warpd --hint
+      cmd + alt - x : ${keyboardSwitcher}/bin/keyboardSwitcher select "U.S." 2>/dev/null; ${warpdMacosPkg}/bin/warpd --hint
     '';
   };
 }

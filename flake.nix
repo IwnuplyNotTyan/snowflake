@@ -80,7 +80,7 @@
 	  mousewalkPkg = pkgs.callPackage ./pkgs/mousewalk/default.nix { 
 	    python3PackagesUnstable = pkgsUnstable.python3Packages;
 	  };
-	  warpdPkg = pkgs.callPackage ./pkgs/warpd { };
+	  warpdMacosPkg = pkgs.callPackage ./pkgs/warpd-macos { };
 	  warpdLinuxPkg = pkgs.callPackage ./pkgs/warpd-linux { };
         in
         home-manager.lib.homeManagerConfiguration {
@@ -105,7 +105,7 @@
               #miriPkg
 	      koi
 	      mousewalkPkg
-	      warpdPkg
+	      warpdMacosPkg
 	      warpdLinuxPkg
               ;
           };
