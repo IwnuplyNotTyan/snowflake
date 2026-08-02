@@ -5,7 +5,7 @@
    # pkgsUnstable.ollama
   ] ++ lib.optionals (isDarwin) [
     pkgs.nodejs
-  #] ++ lib.optionals (!isDarwin) [
+  ] ++ lib.optionals (!isDarwin) [
     pkgsUnstable.opencode
   ];
 
