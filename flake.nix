@@ -25,7 +25,10 @@
     #	url = "github:nix-community/emacs-overlay";
     #	inputs.nixpkgs.follows = "nixpkgs";
     #};
-    koi.url = "github:iwnuplynottyan/koi";
+    koi = {
+      url = "github:iwnuplynottyan/koi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     #nix4gitbutler.url = "github:kmdtaufik/nix4gitbutler"; # Gitbutler
     #neru.url = "github:y3owk1n/neru";				# Mouse / Warpd analog
     #disko = {

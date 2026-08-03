@@ -46,6 +46,7 @@ let
       python3Packages.pyobjc-framework-Quartz
       pyobjc-framework-ApplicationServices
     ];
+    meta = (oldAttrs.meta or { }) // lib.optionalAttrs stdenv.isDarwin { broken = false; };
   });
 in
 
