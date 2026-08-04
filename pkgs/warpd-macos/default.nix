@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "warpd";
-  version = "1.3.5";
+  version = "unstable-2023-06-03";
 
   src = fetchFromGitHub {
     owner = "rvaiya";
     repo = "warpd";
-    rev = "v${version}";
-    sha256 = "sha256-YHTQ5N4SZSa3S3sy/lNjarKPkANIuB2khwyOW5TW2vo=";
+    rev = "01650eabf70846deed057a77ada3c0bbb6d97d6e";
+    sha256 = "sha256-61+kJvOi4oog0+tGucc1rWemdx2vp15wlluJE+1PzTs=";
   };
 
   buildInputs = lib.optionals stdenv.isDarwin [
