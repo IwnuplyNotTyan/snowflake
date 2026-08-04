@@ -11,6 +11,13 @@
     #nix4gitbutler.packages.x86_64-linux.cli
   ];
 
+  xdg.dataFile."gh/extensions" = {
+    source = pkgs.linkFarm "gh-extensions" [
+      { name = "gh-dash"; path = "${pkgsUnstable.gh-dash}/bin"; }
+      { name = "gh-eco"; path = "${pkgsUnstable.gh-eco}/bin"; }
+    ];
+  };
+
 programs.git = {
   enable = true;
 
@@ -51,14 +58,5 @@ programs.git = {
       helper = "/Users/q/.nix-profile/bin/gh auth git-credential";
     };
   };
-};
-
-programs.gh = {
-  enable = true;
-  gitCredentialHelper.enable = false;
-  extensions = [
-    pkgsUnstable.gh-dash
-    pkgsUnstable.gh-eco
-  ];
 };
 }

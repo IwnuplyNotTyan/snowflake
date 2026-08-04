@@ -31,9 +31,9 @@
   ]
   ++ lib.optionals (isDarwin) [
     # *MacOS
-    ./module/wm/skhd.nix    	# *Hotkeys
-    ./module/wm/kitty.nix   	# *Only Kitty
-    #./module/wm/miri.nix   	# *Miri WM
+    ./module/wm/warpd.nix    	# Warpd
+    ./module/wm/kitty.nix   	# Only Kitty
+    #./module/wm/miri.nix   	# Miri WM
   ];
 
   programs.home-manager.enable = true;
