@@ -28,6 +28,8 @@ programs.git = {
       name = "IwnuplyNotTyan";
       email = "ikissiwnuply@gmail.com";
     };
+
+    pull.rebase = true;
     
     http = {
       lowSpeedLimit = 1000;
