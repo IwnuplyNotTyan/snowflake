@@ -21,6 +21,10 @@
           path = if isDarwin then "~/Documents/Camera" else "~/files/Camera";
           devices = [ "Merlinx" ];
         };
+	"Pics" = {
+	  path = if isDarwin then "~/Documents/Pics" else "~/files/media/Pics";
+	  devices = [ "Merlinx" ];
+	};
         "Music" = {
           path = if isDarwin then "~/Documents/Music" else "~/files/media/Music";
           devices = [ "Merlinx" ];
