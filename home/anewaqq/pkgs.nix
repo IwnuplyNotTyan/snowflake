@@ -27,6 +27,9 @@
     ++ lib.optionals (!isDarwin) [
       nixgl.nixGLIntel
       bluetuith
+    ]
+    ++ lib.optionals (isDarwin) [
+      nerd-fonts.iosevka
     ];
 
   nixpkgs.config.allowUnfreePredicate =
