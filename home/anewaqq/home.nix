@@ -27,13 +27,22 @@
   ]
   ++ lib.optionals (!isDarwin) [
     # *(Non)Nixos
-    ./module/wm			 # I3 & Kitty
+      ./kitty.nix   # Terminal
+  ] ++ lib.optionals (!isDarwin) [
+    ./i3.nix 			 # I3WM
+    ({ pkgs, lib, ... }: {       # SwayWM
+      _module.args.isSway = false; # Disabled
+    })
+    #./sway.nix
+    ./picom.nix			 # Picom
+    ./eww/eww.nix
+    ./warpd.nix   		 # Warpd
   ]
   ++ lib.optionals (isDarwin) [
     # *MacOS
-    ./module/wm/warpd.nix    	# Warpd
-    ./module/wm/kitty.nix   	# Only Kitty
-    #./module/wm/miri.nix   	# Miri WM
+    ./module/wm/warpd.nix    	 # Warpd
+    ./module/wm/kitty.nix   	 # Only Kitty
+    #./module/wm/miri.nix   	 # Miri WM
   ];
 
   programs.home-manager.enable = true;
