@@ -30,6 +30,7 @@ programs.git = {
     };
 
     pull.rebase = true;
+    init.defaultBranch = "main";
     
     http = {
       lowSpeedLimit = 1000;
