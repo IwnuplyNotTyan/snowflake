@@ -14,7 +14,7 @@
         user = if isDarwin then "Anewaqq-mac" else "Eweless3";
       };
       devices = {
-        "Merlinx" = { id = "GMY525L-2WMZECJ-BVQDSXN-PCZGT2W-LTGXOG2-6AJJKKP-GQWKATJ-X7BYPAZ"; };
+        "Merlinx" = { id = "U6CIKQG-IBSDTIE-IUIVJYO-I77CSTM-AVCSI5P-RZHE7HI-337AHZB-D2WLCQI"; };
       };
       folders = {
         "Camera" = {
