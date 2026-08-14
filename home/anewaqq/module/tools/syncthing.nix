@@ -33,6 +33,10 @@
           path = if isDarwin then "~/Documents/Wal" else "~/files/media/wal";
           devices = [ "Merlinx" ];
         };
+	"Aegis" = {
+	  path = if isDarwin then "~/Documents/Aegis" else "~/files/aegis";
+	  devices = [ "Merlinx" ];
+	};
       };
     };
   };
