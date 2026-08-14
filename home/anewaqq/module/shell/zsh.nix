@@ -63,10 +63,13 @@
       };
 
       shellAliases = {
+        
+	"i3" = "startx /usr/bin/i3";
+	"gs"="gamescope -W 1920 -H 1080 -r 60 --fullscreen --force-grab-cursor --grab -e -- steam -steamos3 -gamepadui";
         ":q" = "exit";
-        e = "exa --icons --color=always --reverse";
-        el = "exa --icons --color=always --reverse --git -l --all";
-        et = "exa --icons --tree --color=always --reverse";
+        "e" = "exa --icons --color=always --reverse";
+        "el" = "exa --icons --color=always --reverse --git -l --all";
+        "et" = "exa --icons --tree --color=always --reverse";
       };
 
       initContent = ''
