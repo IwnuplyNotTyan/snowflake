@@ -52,20 +52,20 @@
     };
   };
 
-  xdg.desktopEntries = lib.mkIf (!isDarwin) {
-    zathura = {
-      name = "zathura";
-      genericName = "Document Viewer";
-      comment = "A highly customizable document viewer";
-      exec = "nixGLIntel zathura %u";
-      icon = "zathura";
-      categories = [
-        "Office"
-        "Viewer"
-      ];
-      terminal = false;
-    };
-  };
+  #xdg.desktopEntries = lib.mkIf (!isDarwin) {
+  #  zathura = {
+  #    name = "zathura";
+  #    genericName = "Document Viewer";
+  #    comment = "A highly customizable document viewer";
+  #    exec = "nixGLIntel zathura %u";
+  #    icon = "zathura";
+  #    categories = [
+  #      "Office"
+  #      "Viewer"
+  #    ];
+  #    terminal = false;
+  #  };
+  #};
 
   home.file = lib.mkIf isDarwin {
   "Applications/Zathura.app/Contents/Info.plist".text = ''
