@@ -24,24 +24,20 @@
     ./module/tools/koi.nix       # Markdown suck
     ./module/tools/mousewalk.nix # DVD Cursor!
     ./module/media/telegram.nix  # Telegram Desktop
-  ]
-  ++ lib.optionals (!isDarwin) [
-    # *(Non)Nixos
-      ./kitty.nix   # Terminal
+    ./module/wm/kitty.nix   	 # Only Kitty
+    ./module/wm/warpd.nix    	 # Warpd
   ] ++ lib.optionals (!isDarwin) [
-    ./i3.nix 			 # I3WM
-    ({ pkgs, lib, ... }: {       # SwayWM
+    # *(Non)Nixos
+    ./module/wm/i3.nix 			 		 # I3WM
+    ({ pkgs, lib, ... }: {       		 # SwayWM
       _module.args.isSway = false; # Disabled
     })
-    #./sway.nix
-    ./picom.nix			 # Picom
-    ./eww/eww.nix
-    ./warpd.nix   		 # Warpd
-  ]
-  ++ lib.optionals (isDarwin) [
+    #./module/wm/sway.nix
+    ./module/wm/picom.nix			 # Picom
+    ./module/wm/eww/eww.nix			 # Widgets
+  #]
+  #++ lib.optionals (isDarwin) [
     # *MacOS
-    ./module/wm/warpd.nix    	 # Warpd
-    ./module/wm/kitty.nix   	 # Only Kitty
     #./module/wm/miri.nix   	 # Miri WM
   ];
 
