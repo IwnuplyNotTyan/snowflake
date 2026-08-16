@@ -4,12 +4,4 @@
     gtk-application-prefer-dark-theme=true
     gtk-theme-name=Adwaita
   '';
-
-  qt = {
-    enable = true;
-    platformTheme.name = "gnome";
-    style = {
-      name = "adwaita";
-    };
-  };
 }
