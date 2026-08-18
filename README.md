@@ -49,8 +49,6 @@ nix build .#homeConfigurations.anewaqq.activationPackage
 |Anewaqq|Linux_x86-64|Home manager settings| ✅ |
 |Anewaqq@darwin|Darwin_x86-64|HM mac version| ✅ |
 
-`*` - Commented
-
 ---
 
 ## 🎏 Flake inputs
@@ -70,7 +68,9 @@ nix build .#homeConfigurations.anewaqq.activationPackage
 
 ✨ - Apps
 
-## 😼 Custom pkg'src
+---
+
+## 😼 Custom pkg's
 
 
 |System|Name|Input|Desc|
