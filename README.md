@@ -70,6 +70,22 @@ nix build .#homeConfigurations.anewaqq.activationPackage
 
 ✨ - Apps
 
+## 😼 Custom pkg'src
+
+
+|System|Name|Input|Desc|
+|----|----|-----|----|
+|🍏|Miri|miri| Niri like wm|
+|🍏|Warpd|warpd-macos|keyboard-driven virtual pointer|
+|🐧|-|warpd-linux|-|
+|✨|Mousewalk|mousewalk|DVD screensaver|
+
+🍏 - Macos
+
+🐧 - Linux
+
+✨ - Both
+
 ---
 
 ## 🪻 File Tree
