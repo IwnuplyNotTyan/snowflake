@@ -37,6 +37,7 @@
     ./module/wm/picom.nix			# Picom
     ./module/wm/eww/eww.nix			# Widgets
     ./module/wm/wal.nix				# Wallpapers picker
+    ./module/wm/vicinae.nix			# Vicinae
   #]
   #++ lib.optionals (isDarwin) [
     # *MacOS

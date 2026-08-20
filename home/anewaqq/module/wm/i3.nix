@@ -27,8 +27,6 @@ in
     feh
 
     nerd-fonts.iosevka
-
-    pkgsUnstable.vicinae
   ];
 
   xsession.windowManager.i3 = {
