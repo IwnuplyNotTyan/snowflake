@@ -36,6 +36,7 @@
     ./module/wm/theme.nix			# Like a default gtk theme 
     ./module/wm/picom.nix			# Picom
     ./module/wm/eww/eww.nix			# Widgets
+    ./module/wm/wal.nix				# Wallpapers picker
   #]
   #++ lib.optionals (isDarwin) [
     # *MacOS

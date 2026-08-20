@@ -172,8 +172,13 @@ in
           always  = true;
           notification = false;
         }
-        {
-          command = "feh --bg-fill ~/files/media/wal/wallhaven-gjwg7l_1920x1080-sovonegr.png";
+        #{
+        #  command = "feh --bg-fill ~/files/media/wal/wallhaven-gjwg7l_1920x1080-sovonegr.png";
+        #  always  = true;
+        #  notification = false;
+        #}
+	{
+          command = "walpick";
           always  = true;
           notification = false;
         }
