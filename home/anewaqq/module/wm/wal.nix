@@ -3,7 +3,7 @@ let
   walpick = pkgs.writeShellScriptBin "walpick" ''
     PATH="${pkgs.lib.makeBinPath [ pkgs.gum pkgs.bash pkgs.ffmpeg ]}:$PATH"
 set -euo pipefail
-WALLPAPER_DIR="$HOME/files/media/wal/"
+WALLPAPER_DIR="$HOME/files/media/Pics/"
 TOLERANCE=0.05
 MIN_WIDTH=1920
 MIN_HEIGHT=1080

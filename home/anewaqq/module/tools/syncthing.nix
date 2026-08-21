@@ -29,10 +29,10 @@
           path = if isDarwin then "~/Documents/Music" else "~/files/media/Music";
           devices = [ "Merlinx" ];
         };
-        "Wallpapers" = {
-          path = if isDarwin then "~/Documents/Wal" else "~/files/media/wal";
-          devices = [ "Merlinx" ];
-        };
+        #"Wallpapers" = {
+        #  path = if isDarwin then "~/Documents/Wal" else "~/files/media/wal";
+        #  devices = [ "Merlinx" ];
+        #};
 	"Aegis" = {
 	  path = if isDarwin then "~/Documents/Aegis" else "~/files/aegis";
 	  devices = [ "Merlinx" ];
