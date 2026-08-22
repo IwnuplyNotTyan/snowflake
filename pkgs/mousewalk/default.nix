@@ -75,13 +75,9 @@ python3Packages.buildPythonApplication {
     echo "#!/usr/bin/env python3" > $out/bin/mousewalk
     cat mousewalk.py >> $out/bin/mousewalk
     chmod +x $out/bin/mousewalk
-
-    if [ ! -d "$out/share/applications" ]; then
-      if [ -f "icons/mousewalk.png" ]; then
-        mkdir -p $out/share/icons/hicolor/256x256/apps
-        cp icons/mousewalk.png $out/share/icons/hicolor/256x256/apps/mousewalk.png
-      fi
-    fi
+  '' + lib.optionalString (!stdenv.isDarwin) ''
+    mkdir -p $out/share/icons/hicolor/256x256/apps
+    cp icons/icon.png $out/share/icons/hicolor/256x256/apps/mousewalk.png
   '' + lib.optionalString stdenv.isDarwin ''
     APP_DIR="$out/Applications/Mousewalk.app/Contents"
     mkdir -p "$APP_DIR/MacOS"
