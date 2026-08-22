@@ -101,7 +101,19 @@ gum log -l info "Check wallpaper!" file "$found"
 in
 
 {
- home.packages = with pkgs; [
+ home.packages = [
    walpick
  ];
+
+ 
+  home.file.".local/share/vicinae/scripts/walpickvicinae.sh" = {
+    executable = true;
+    text = ''
+#!/usr/bin/env bash
+# @vicinae.schemaVersion 1
+# @vicinae.title Wallpaper Pick
+# @vicinae.mode compact
+
+walpick
+  '';};
 }

@@ -146,4 +146,15 @@
       };
     };
   };
+
+  home.file.".local/share/vicinae/scripts/monitor.sh" = {
+    executable = true;
+    text = ''
+#!/usr/bin/env bash
+# @vicinae.schemaVersion 1
+# @vicinae.title Monitor Sleep
+# @vicinae.mode compact
+
+xset dpms force off
+  '';};
 }
