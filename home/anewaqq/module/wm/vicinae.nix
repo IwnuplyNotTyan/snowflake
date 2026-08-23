@@ -69,6 +69,7 @@
       theme = {
         dark = {
           name = "vicinae-dark";
+	  icon_theme = "WhiteSur-dark";
         };
       };
 
@@ -103,6 +104,23 @@
         applications = {
           entrypoints = {
             "Vernal Edge".enabled = false;
+	    "nvim".enabled = false;
+	    "avahi-discover".enabled = false;
+            "bottom".enabled = false;
+            "bssh".enabled = false;
+            "bvnc".enabled = false;
+            "cups".enabled = false;
+            "lstopo".enabled = false;
+            "mpv".enabled = false;
+            "nm-connection-editor".enabled = false;
+            "qv4l2".enabled = false;
+            "qvidcap".enabled = false;
+            "stoken-gui".enabled = false;
+            "stoken-gui-small".enabled = false;
+            "syncthing-ui".enabled = false;
+            "uxterm".enabled =false;
+            "vicinae".enabled = false;
+            "xterm".enabled = false;
           };
         };
 
