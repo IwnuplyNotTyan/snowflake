@@ -1,7 +1,25 @@
+{ pkgs, ... }:
+
 {
-  home.file.".config/gtk-3.0/settings.ini".text = ''
-    [Settings]
-    gtk-application-prefer-dark-theme=true
-    gtk-theme-name=Adwaita
-  '';
+gtk = {
+  enable = true;
+  
+  iconTheme = {
+    name = "whitesur";
+    package = pkgs.whitesur-icon-theme;
+  };
+  
+  font = {
+    name = "Iosevka Nerd Font";
+    size = 11;
+  };
+  
+  gtk3.extraConfig = {
+    gtk-application-prefer-dark-theme = true;
+  };
+};
+
+home.sessionVariables = {
+  GTK_THEME = "whitesur-GTK-Theme";
+};
 }
