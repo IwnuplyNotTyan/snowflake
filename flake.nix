@@ -85,6 +85,7 @@
 	  };
 	  warpdMacosPkg = pkgs.callPackage ./pkgs/warpd-macos { };
 	  warpdLinuxPkg = pkgs.callPackage ./pkgs/warpd-linux { };
+	  minPkg = pkgs.callPackage ./pkgs/min { };
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -109,6 +110,7 @@
 	      koi
 	      mousewalkPkg
 	      warpdMacosPkg
+	      minPkg
 	      warpdLinuxPkg
               ;
           };

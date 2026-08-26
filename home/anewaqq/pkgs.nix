@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  minPkg,
   isDarwin ? false,
   ...
 }:
@@ -23,10 +24,12 @@
 
       # Etc
       nodejs_22
+      minPkg
     ]
     ++ lib.optionals (!isDarwin) [
       nixgl.nixGLIntel
       bluetuith
+      ripdrag
     ]
     ++ lib.optionals (isDarwin) [
       nerd-fonts.iosevka
