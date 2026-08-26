@@ -24,6 +24,7 @@
 , nss
 , pango
 , systemd
+, pulseaudio
 , xorg
 , libGL
 , libgbm ? mesa   # some nixpkgs versions expose libgbm separately
@@ -65,6 +66,7 @@ stdenv.mkDerivation rec {
     nss
     pango
     systemd
+    pulseaudio
     libGL
     xorg.libX11
     xorg.libXcomposite
@@ -112,7 +114,9 @@ stdenv.mkDerivation rec {
 
     wrapProgram $out/opt/Min/min \
       --add-flags "\''${NIXOS_OZONE_WL:+--ozone-platform=wayland}" \
-      --set-default ELECTRON_IS_DEV 0
+      --set-default ELECTRON_IS_DEV 0 \
+      --set-default ELECTRON_ENABLE_LOGGING 1 \
+      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [ pulseaudio ]}"
   '';
 
   meta = with lib; {
