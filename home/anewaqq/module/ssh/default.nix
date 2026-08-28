@@ -37,11 +37,11 @@ in
         identityFile = "~/.ssh/id_ed25519";
       };
 
-      "Soft" = {
-        hostname = "git.welara-sun.ts.net";
-        port = 23231;
-        identityFile = "~/.ssh/id_ed25519";
-      };
+      #"Soft" = {
+      #  hostname = "git.welara-sun.ts.net";
+      #  port = 23231;
+      #  identityFile = "~/.ssh/id_ed25519";
+      #};
 
       "Mikrotik" = {
         hostname = "192.168.1.1";
