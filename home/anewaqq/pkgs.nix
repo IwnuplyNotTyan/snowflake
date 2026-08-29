@@ -30,9 +30,6 @@
       nixgl.nixGLIntel
       bluetuith
       ripdrag
-    ]
-    ++ lib.optionals (isDarwin) [
-      nerd-fonts.iosevka
     ];
 
   nixpkgs.config.allowUnfreePredicate =

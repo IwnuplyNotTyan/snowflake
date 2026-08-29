@@ -5,10 +5,10 @@ let
 in
 {
   home.packages = with pkgs; [
-    grim
-    slurp
     wl-clipboard
+    wl-clip-persist
     wtype
+    cliphist
 
     pulseaudio
 
@@ -18,11 +18,6 @@ in
 
     nerd-fonts.iosevka
   ];
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
-  };
 
   programs.niri = {
     enable = true;
@@ -63,11 +58,16 @@ in
       };
 
       spawn-at-startup = [
-        { command = [ "walpick" ]; }
-        { command = [ "nixGLIntel" "vicinae" "server" ]; }
-        { command = [ "eww" "daemon" ]; }
-        { command = [ "notif-listener" ]; }
-      ];
+	  { command = [ "xwayland-satellite" ]; }
+	  { command = [ "sh" "-c" "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY" ]; }
+	  { command = ["wl-clip-persist" "--clipboard" "both"]; }
+	  { command = ["sh" "-c" "wl-paste --type text --watch cliphist store"]; }
+	  { command = ["sh" "-c" "wl-paste --type image --watch cliphist store"]; }
+	  { command = [ "walpick" ]; }
+	  { command = [ "nixGLIntel" "vicinae" "server" ]; }
+	  { command = [ "eww" "daemon" ]; }
+	  { command = [ "notif-listener" ]; }
+	];
 
       window-rules = [
         {

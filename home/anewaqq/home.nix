@@ -28,10 +28,10 @@
     ./module/wm/warpd.nix    	 		# Warpd
   ] ++ lib.optionals (!isDarwin) [
     # *(Non)Nixos
-    #./module/wm/i3.nix 			# I3WM
-    ./module/wm/niri.nix			# Niri
+    ./module/wm/i3.nix	 			# I3WM
+    #./module/wm/niri.nix			# Niri
     ({ pkgs, lib, ... }: {       		# SwayWM
-      _module.args.isSway = true;
+      _module.args.isSway = false;
     })
     #./module/wm/sway.nix
     ./module/wm/theme.nix			# Like a default gtk theme 
