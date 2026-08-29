@@ -1,23 +1,20 @@
-{ pkgs, ...}:
+{ pkgs, isSway, lib, ...}:
 {
   home.packages = with pkgs; [
     telegram-desktop
   ];
 
-  #xdg.desktopEntries = lib.mkIf (!isDarwin) {
-  #  telegram-desktop = {
-  #    name = "Telegram Desktop";
-  #    comment = "Official Telegram messaging app";
-  #    exec = "nixGLIntel ${pkgs.telegram-desktop}/bin/telegram-desktop %u";
-  #    icon = "telegram";
-  #    terminal = false;
-  #    categories = [ "Network" "InstantMessaging" ];
-  #    mimeType = [ "x-scheme-handler/tg" ];
-  #    #startupWMClass = "TelegramDesktop";
-  #    #startupNotify = true;
-  #    settings = {
-  #      X-GNOME-UsesNotifications = "true";
-  #    };
-  #  };
-  #};
+
+xdg.desktopEntries."org.telegram.desktop" = lib.mkIf (isSway) {
+  name = "Telegram Desktop";
+  comment = "Official desktop client for the Telegram messaging app";
+  exec = "env QT_QPA_PLATFORM=xcb Telegram -- %u";
+  icon = "telegram";
+  terminal = false;
+  categories = [ "Network" "InstantMessaging" "Chat" ];
+  mimeType = [ "x-scheme-handler/tg" ];
+  settings = {
+    X-GNOME-UsesNotifications = "true";
+  };
+};
 }

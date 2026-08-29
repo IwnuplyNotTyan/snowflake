@@ -63,7 +63,6 @@ in
       };
 
       spawn-at-startup = [
-        { command = [ "warpd" ]; }
         { command = [ "walpick" ]; }
         { command = [ "nixGLIntel" "vicinae" "server" ]; }
         { command = [ "eww" "daemon" ]; }
