@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstable, ... }:
+{ pkgs, pkgsUnstable, isSway, ... }:
 
 {
   programs = {
@@ -63,8 +63,11 @@
       };
 
       shellAliases = {
+         i3 = if isSway then 
+  	  "export XDG_SESSION_TYPE=wayland && export XDG_CURRENT_DESKTOP=niri && systemctl --user import-environment DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && nixGLIntel niri"
+      	else 
+ 	 "startx";
         
-	"i3" = "startx /usr/bin/i3";
 	"gs"="gamescope -W 1920 -H 1080 -r 60 --fullscreen --force-grab-cursor --grab -e -- steam -steamos3 -gamepadui";
         ":q" = "exit";
         "e" = "exa --icons --color=always --reverse";

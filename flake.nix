@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix"; # Crypt
+    niri-flake.url = "github:sodiboo/niri-flake"; # Niri Config
     waqq = {
       # Neovim dots
       url = "github:iwnuplynottyan/waqq";
@@ -61,6 +62,7 @@
       home-manager,
       waqq,
       koi,
+      niri-flake,
       #nix-doom-emacs-unstraightened,
       ...
     }:
@@ -95,6 +97,7 @@
             nix-index-database.homeModules.nix-index
             agenix.homeManagerModules.age
 	    koi.homeManagerModules.default
+	    niri-flake.homeModules.niri
 	    #nix-doom-emacs-unstraightened.homeModule
             #neru.homeManagerModules.default
           ];

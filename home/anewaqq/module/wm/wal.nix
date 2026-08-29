@@ -1,8 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, isSway ? false, ... }:
 let
   walpick = pkgs.writeShellScriptBin "walpick" ''
-    PATH="${pkgs.lib.makeBinPath [ pkgs.gum pkgs.bash pkgs.ffmpeg ]}:$PATH"
+    PATH="${pkgs.lib.makeBinPath [
+      pkgs.gum
+      pkgs.bash
+      pkgs.ffmpeg
+      pkgs.feh
+      pkgs.swaybg
+      pkgs.procps # pkill, used to replace a running swaybg instance
+    ]}:$PATH"
 set -euo pipefail
+IS_SWAY=${if isSway then "1" else "0"}
 WALLPAPER_DIR="$HOME/files/media/Pics/"
 TOLERANCE=0.05
 MIN_WIDTH=1920
@@ -27,9 +35,14 @@ while [[ $# -gt 0 ]]; do
         *) WALLPAPER_DIR="$1"; shift ;;
     esac
 done
-for bin in ffprobe feh gum shuf; do
+if [[ "$IS_SWAY" -eq 1 ]]; then
+    SETTER_BIN="swaybg"
+else
+    SETTER_BIN="feh"
+fi
+for bin in ffprobe gum shuf "$SETTER_BIN"; do
     if ! command -v "$bin" &>/dev/null; then
-        echo "Не найден бинарник: $bin" >&2
+        echo "App doesnt founded: $bin" >&2
         exit 1
     fi
 done
@@ -95,7 +108,14 @@ gum log -l info "Image found" \
     file "$found" \
     resolution "''${width}x''${height}" \
     checked_files "$checked"
-feh --bg-fill "$found"
+if [[ "$IS_SWAY" -eq 1 ]]; then
+    pkill -x swaybg &>/dev/null || true
+    setsid swaybg -i "$found" -m fill >/dev/null 2>&1 &
+    disown
+else
+    # X11 (i3, etc.)
+    feh --bg-fill "$found"
+fi
 gum log -l info "Check wallpaper!" file "$found"
 '';
 in
