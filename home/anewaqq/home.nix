@@ -35,7 +35,7 @@
     })
     #./module/wm/sway.nix
     ./module/wm/theme.nix			# Like a default gtk theme 
-    #./module/wm/picom.nix			# Picom
+    ./module/wm/picom.nix			# Picom
     ./module/wm/eww/eww.nix			# Widgets
     ./module/wm/wal.nix				# Wallpapers picker
     ./module/wm/vicinae.nix			# Vicinae
