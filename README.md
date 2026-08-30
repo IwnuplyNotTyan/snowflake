@@ -15,7 +15,7 @@
 # ✨ Features of config
 
 - OS - Arch Based / MacOS
-- WM - [I3wm](https://i3wm.org/) / [SwayFX](https://github.com/WillPower3309/swayfx) / Aqua
+- WM - [I3wm](https://i3wm.org/) / [SwayFX](https://github.com/WillPower3309/swayfx)* / [Niri](https://github.com/niri-wm/niri)* / Aqua
 - Shell - [Zsh](https://zsh.org)
 - Term - [Kitty](https://sw.kovidgoyal.net/kitty/) + [Tmux](https://github.com/tmux/tmux)
 - Music - [Rmpc](https://rmpc.mierak.dev/)
@@ -23,6 +23,8 @@
 - Comp - [Picom](https://picom.com)
 - Spotlight - [Vicinae](https://github.com/vicinaehq/vicinae/) / [Raycast](https://www.raycast.com/)
 - Editor - [Neovim](https://github.com/neovim/neovim) v0.11.7, [dots](https://github.com/IwnuplyNotTyan/waqq)
+
+`*` - Not supported, sway issue's: warpd can freeze system and unstable gamescope work. niri: [clipboard](https://github.com/niri-wm/niri/issues/112)
 
 ---
 
