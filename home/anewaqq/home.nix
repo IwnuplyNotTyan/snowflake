@@ -13,13 +13,13 @@
     ./pkgs.nix 			 		# Basic app's
     ./module/ai.nix 		 		# AI (Opencode, ollama and etc)
     ./module/git.nix 		 		# Git(hub)
+    ./module/nix.nix 		 		# Nix
     ./module/ssh 		 		# SSH
-    ./module/tools/syncthing.nix 		# Syncthing
     ./module/shell 		 		# Starship & zsh
     ./module/editor 		 		# Text editor
+    ./module/tools/syncthing.nix 		# Syncthing
     ./module/tools/mpd.nix 	 		# Music
     ./module/tools/zathura.nix   		# Zathura
-    ./module/nix.nix 		 		# Nix
     ./module/tools/direnv.nix    		# DirEnv
     ./module/tools/koi.nix       		# Markdown suck
     ./module/tools/mousewalk.nix 		# DVD Cursor!
