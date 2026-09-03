@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  minPkg,
   isDarwin ? false,
   ...
 }:
@@ -24,7 +23,6 @@
 
       # Etc
       nodejs_22
-      minPkg
     ]
     ++ lib.optionals (!isDarwin) [
       nixgl.nixGLIntel
