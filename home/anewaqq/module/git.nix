@@ -1,11 +1,19 @@
 { pkgs, pkgsUnstable, lib, isDarwin, ... }:
 
+let
+  driftNix = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/nix-community/nur-combined/d3178443af01fc749375b71ed816154d447763c9/repos/aymanbagabas/pkgs/drift/default.nix";
+    sha256 = "sha256:0lmfm7yc7jxxm1z3n7amy6zwlsj10s1hfs26prgcnvzykxmc0b42";
+  };
+  drift = pkgs.callPackage driftNix {};
+in
+
 {
   home.packages = with pkgs; [
     git-lfs
     lazygit
     github-cli
-    diffnav
+    drift
     git
 
     #nix4gitbutler.packages.x86_64-linux.cli
@@ -45,7 +53,7 @@ programs.git = {
       process = "git-lfs filter-process";
     };
     
-    pager.diff = "diffnav";
+    pager.diff = "drift";
   } // lib.optionalAttrs (!isDarwin) {
     credential."https://github.com" = {
       helper = "/home/q/.nix-profile/bin/gh auth git-credential";
