@@ -29,7 +29,7 @@ in
 programs.git = {
   enable = true;
 
-  signing.format = null;
+  signing.format = "ssh";
   
   settings = {
     user = {
